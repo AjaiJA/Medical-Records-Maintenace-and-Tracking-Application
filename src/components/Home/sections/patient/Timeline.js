@@ -75,7 +75,7 @@ let Timeline = (props) => {
             window.location.href="/"
         }
         else{
-            let response=await fetch(`http://localhost:8000/api/patient/patients-prescription-history/?aadhar_number=${props.userid}`,{
+            let response=await fetch(`https://health-record-track.herokuapp.com/api/patient/patients-prescription-history/?aadhar_number=${props.userid}`,{
                 headers:{'Content-Type': 'application/json'}
             })
             let content=await response.json()
@@ -87,7 +87,7 @@ let Timeline = (props) => {
 
         let doctorName=''
 
-        fetch(`http://localhost:8000/api/doctor/doctors-details/?doctor_id=${name}`)
+        fetch(`https://health-record-track.herokuapp.com/api/doctor/doctors-details/?doctor_id=${name}`)
         .then(response => response.json())
         .then(data => {
             setDoctor(data.name)

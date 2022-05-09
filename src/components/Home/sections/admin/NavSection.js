@@ -20,7 +20,7 @@ export default function NavSection(props){
     useEffect(()=>{
         (
             async()=>{
-                let response=await fetch('http://localhost:8000/api/hospital-admin/',{
+                let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-admin/',{
                     headers:{'Content-Type': 'application/json'},
                     credentials:'include'
                 })
@@ -31,7 +31,7 @@ export default function NavSection(props){
                 }
                 else{
                     let imgLogo=content.logo
-                    setAdminLogoPath("http://localhost:8000"+imgLogo)
+                    setAdminLogoPath("https://health-record-track.herokuapp.com"+imgLogo)
                     // let imgLogoModified=imgLogo.replaceAll("/media/media", "/media")// imgLogo.replace("/media", "")
                     // setAdminLogoPath(require("./../../../../backend"+imgLogoModified).default)
                 }
@@ -48,7 +48,7 @@ export default function NavSection(props){
 
     let logout=async ()=>{
         handleClose()
-        let response=await fetch('http://localhost:8000/api/hospital-logout/',{
+        let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'

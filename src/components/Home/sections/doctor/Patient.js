@@ -122,7 +122,7 @@ export default function Patient(props) {
     useEffect(()=>{
         (
             async()=>{
-                let response=await fetch('http://localhost:8000/api/patient/patients-lists/',{
+                let response=await fetch('https://health-record-track.herokuapp.com/api/patient/patients-lists/',{
                     headers:{'Content-Type': 'application/json'}
                 })
                 let content=await response.json()
@@ -155,7 +155,7 @@ export default function Patient(props) {
             setCurrentPatientInfo("")
         }
 
-        let response=await fetch(`http://localhost:8000/api/patient/patients-prescription-history/?aadhar_number=${patientID}`,{
+        let response=await fetch(`https://health-record-track.herokuapp.com/api/patient/patients-prescription-history/?aadhar_number=${patientID}`,{
             headers:{'Content-Type': 'application/json'}
         })
         let content=await response.json()
@@ -208,7 +208,7 @@ export default function Patient(props) {
                                     <div className="content">
                                         <div className="card">
                                             <div className="firstinfo">
-                                                <img src={"http://localhost:8000"+currentPatientInfo.logo} />
+                                                <img alt="" src={"https://health-record-track.herokuapp.com"+currentPatientInfo.logo} />
                                                 <div className="profileinfo">
                                                     <h1>{currentPatientInfo.patient_name}</h1>
                                                     <h6>{currentPatientInfo.aadhar_number}</h6>

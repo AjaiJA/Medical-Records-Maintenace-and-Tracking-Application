@@ -31,7 +31,7 @@ let DoctorHomePage=()=>{
                 if(!localStorage.getItem('JAM_DISPLAY_CONTENT')){
                     window.location.href="/"
                 }
-                let response=await fetch('http://localhost:8000/api/doctor/profile/',{
+                let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/profile/',{
                     headers:{'Content-Type': 'application/json'},
                     credentials:'include'
                 })
@@ -54,7 +54,7 @@ let DoctorHomePage=()=>{
     })
 
     let logout=async ()=>{
-        let response=await fetch('http://localhost:8000/api/doctor/logout/',{
+        let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
@@ -96,7 +96,7 @@ let VerifyEmail=(props)=>{
         let email=props.email
         let email_Verified=props.mailVerify
 
-        let response=await fetch("http://localhost:8000/api/doctor/mail-verify/",{
+        let response=await fetch("https://health-record-track.herokuapp.com/api/doctor/mail-verify/",{
             method:"POST",
             headers:{'Content-Type':'application/json'},
             credentials:'include',

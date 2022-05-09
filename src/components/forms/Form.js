@@ -81,7 +81,7 @@ let HospitalRegisterForm=()=>{
             password:registerArr.password,user_id:uniqId(),mobile_no:registerArr.mobile_no
         })
 
-        let response=await fetch("http://localhost:8000/api/hospital-register/",{
+        let response=await fetch("https://health-record-track.herokuapp.com/api/hospital-register/",{
             method:"POST",
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(registerArr)

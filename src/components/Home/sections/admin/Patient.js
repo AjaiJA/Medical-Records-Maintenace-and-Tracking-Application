@@ -81,7 +81,7 @@ export default function Patient(props) {
                 password:doctorPassword(),aadhar_number:patientAccount.aadhar_number,app_id:patientID(),mobile_no:patientAccount.mobile_no,date_of_birth:patientAccount.date_of_birth
             })
 
-            let response=await fetch("http://localhost:8000/api/patient/account-create/",{
+            let response=await fetch("https://health-record-track.herokuapp.com/api/patient/account-create/",{
                 headers:{'Content-Type':'application/json'},
                 method:"POST",
                 credentials:'include',
@@ -138,7 +138,7 @@ export default function Patient(props) {
     },[])
 
     let getPatientList=async()=>{
-        let response=await fetch('http://localhost:8000/api/patient/lists/',{
+        let response=await fetch('https://health-record-track.herokuapp.com/api/patient/lists/',{
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
         })

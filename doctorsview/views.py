@@ -131,7 +131,7 @@ class MailVerifyView(APIView):
 
             subject = "Verify Your Email"
             msg=f"\t \t \t Welcome Doctor { account.name } \n Click the below link to verify your email. \n"
-            msg += f"http://localhost:3000/verify-token/?email={email}&token={token}"
+            msg += f"https://health-record-track.herokuapp.com/verify-token/?email={email}&token={token}"
             to = email
             res = send_mail(subject, msg, settings.EMAIL_HOST_USER, [to])
 

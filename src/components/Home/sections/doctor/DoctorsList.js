@@ -7,7 +7,7 @@ export default function DoctorsList(props) {
     useEffect(()=>{
         (
             async()=>{
-                let response=await fetch('http://localhost:8000/api/doctor/doctors-lists/',{
+                let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/doctors-lists/',{
                     headers:{'Content-Type': 'application/json'}
                 })
                 let content=await response.json()
@@ -30,7 +30,7 @@ export default function DoctorsList(props) {
                         doctorsList.map((doctor)=>(
                             <div className="card" key={doctor.id}>
                                 <img src="https://images.unsplash.com/photo-1551554781-c46200ea959d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="top1" className="image-top" />
-                                <img src={"http://localhost:8000" + doctor.logo} alt="image1" className="profile-image" />
+                                <img src={"https://health-record-track.herokuapp.com" + doctor.logo} alt="image1" className="profile-image" />
                                 <h1 className="fullname">{doctor.name}</h1>
                                 <h3 className="job">{doctor.dept}</h3>
                                 <p className="about-me">
@@ -83,7 +83,7 @@ let DoctorHospitalDetails=(props)=>{
     useEffect(()=>{
         (
             async()=>{    
-                let response=await fetch(`http://localhost:8000/api/hospital-details/?hospital_id=${props.hospitalid}`)
+                let response=await fetch(`https://health-record-track.herokuapp.com/api/hospital-details/?hospital_id=${props.hospitalid}`)
                 let content=await response.json()
                 setHospitalDetails(content)
             }

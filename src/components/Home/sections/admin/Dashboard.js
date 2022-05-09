@@ -11,7 +11,7 @@ export default function Dashboard(props) {
     useEffect(()=>{
         (
             async()=>{
-                let response=await fetch(`http://localhost:8000/api/doctor/hospital-total-view/?hospital_id=${props.hospitalid}`)
+                let response=await fetch(`https://health-record-track.herokuapp.com/api/doctor/hospital-total-view/?hospital_id=${props.hospitalid}`)
                 let content=await response.json()
                 console.log(content)
                 setTotalDoctors(content.total_doctors)

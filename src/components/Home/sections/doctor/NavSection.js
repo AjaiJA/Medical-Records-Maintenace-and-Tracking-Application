@@ -25,7 +25,7 @@ export default function NavSection() {
                 if(!localStorage.getItem('JAM_DISPLAY_CONTENT')){
                     window.location.href="/"
                 }
-                let response=await fetch('http://localhost:8000/api/doctor/profile/',{
+                let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/profile/',{
                     headers:{'Content-Type': 'application/json'},
                     credentials:'include'
                 })
@@ -37,7 +37,7 @@ export default function NavSection() {
                 }
                 else{
                     setUserID(content.app_id)
-                    setLogo("http://localhost:8000"+content.logo)
+                    setLogo("https://health-record-track.herokuapp.com"+content.logo)
                     setHospitalID(content.hospital_id)
                     setIsEmailVerified(content.email_Verified)
                     setEmail(content.email)
@@ -51,7 +51,7 @@ export default function NavSection() {
 
     let logout=async ()=>{
         handleClose()
-        let response=await fetch('http://localhost:8000/api/doctor/logout/',{
+        let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
@@ -76,7 +76,7 @@ export default function NavSection() {
                 <div className="sidebar-nav-main">
                     <div className="logo-content">
                         <div className="logo" style={{userSelect:"none", textAlign: 'center'}} >
-                            <img src={logo} style={{cursor:"pointer"}} className="doctor-profile-img" />
+                            <img src={logo} style={{cursor:"pointer"}} className="doctor-profile-img" alt="" />
                             <div className="logo-name"><span>Dr.</span> {name}</div> 
                         </div>
                         <i className="bx bx-menu" onClick={maxNav} style={{fontSize:"35px"}} id="btn"></i>

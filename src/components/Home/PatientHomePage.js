@@ -16,7 +16,7 @@ let PatientHomePage=()=>{
                 if(!localStorage.getItem('JAM_DISPLAY_CONTENT')){
                     window.location.href="/"
                 }
-                let response=await fetch('http://localhost:8000/api/patient/patient-login-verify/',{
+                let response=await fetch('https://health-record-track.herokuapp.com/api/patient/patient-login-verify/',{
                     headers:{'Content-Type': 'application/json'},
                     credentials:'include'
                 })
@@ -38,7 +38,7 @@ let PatientHomePage=()=>{
     })
 
     let logout=async ()=>{
-        let response=await fetch('http://localhost:8000/api/patient/logout/',{
+        let response=await fetch('https://health-record-track.herokuapp.com/api/patient/logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'

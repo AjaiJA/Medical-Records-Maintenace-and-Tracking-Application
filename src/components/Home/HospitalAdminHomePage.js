@@ -35,7 +35,7 @@ let HospitalAdminHomePage=()=>{
                     history.push('/')
                 }
 
-                let response=await fetch('http://localhost:8000/api/hospital-admin/',{
+                let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-admin/',{
                     headers:{'Content-Type': 'application/json'},
                     credentials:'include'
                 })
@@ -57,7 +57,7 @@ let HospitalAdminHomePage=()=>{
     })
 
     let logout=async ()=>{
-        let response=await fetch('http://localhost:8000/api/hospital-logout/',{
+        let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
@@ -101,7 +101,7 @@ let VerifyEmail=(props)=>{
         let email=props.email
         let is_email_Verified=props.mailVerify
 
-        let response=await fetch("http://localhost:8000/api/email-verify/",{
+        let response=await fetch("https://health-record-track.herokuapp.com/api/email-verify/",{
             method:"POST",
             headers:{'Content-Type':'application/json'},
             credentials:'include',
@@ -162,9 +162,5 @@ let VerifyEmail=(props)=>{
         </div>
     );
 }
-
-// https://www.benin2009.com/wp-content/uploads/2015/11/hospital.png
-// https://png.pngtree.com/png_detail/20181019/hospital-png-clipart_2548239.png
-//https://img.pngio.com/hospitals-icons-png-of-hospital-building-256_256.png
 
 export default HospitalAdminHomePage;
