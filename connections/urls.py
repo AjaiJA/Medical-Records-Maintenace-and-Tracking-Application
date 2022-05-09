@@ -26,7 +26,7 @@ from django.views.generic import TemplateView
 # router.register("",HospitalAccountView,basename="HospitalAccountView")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path('api/', include('modelsview.urls')),
     path('api/doctor/', include('doctorsview.urls')),
     path('api/patient/', include('patientsview.urls')),

@@ -119,8 +119,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'https://health-record-track.herokuapp.com'
+    'https://health-record-track.herokuapp.com',
+    'http://localhost:3000'
 ]
 
 # Internationalization
