@@ -55,7 +55,7 @@ export default function Doctor(props) {
 
     let getDepartments = async () => {
 
-        let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-dept/',{
+        let response=await fetch('/api/hospital-dept/',{
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
         })
@@ -64,7 +64,7 @@ export default function Doctor(props) {
     }
 
     let getDoctorData=async ()=>{
-        let response=await fetch(`https://health-record-track.herokuapp.com/api/doctor/lists/?hospital_id=${hospital_id}`)
+        let response=await fetch(`/api/doctor/lists/?hospital_id=${hospital_id}`)
         let content=await response.json()
         setDoctorData(content)
         // console.log(content)   
@@ -145,7 +145,7 @@ export default function Doctor(props) {
             dept:doctor.dept,email:doctor.email,doctor_id:doctor.doctor_id,name:doctor.name,hospital_id:doctor.hospital_id,
             joined_date:doctor.joined_date,password_before_verification:doctorPassword(),app_id:doctoruniqId(),mobile_no:doctor.mobile_no
         })
-        let response=await fetch("https://health-record-track.herokuapp.com/api/doctor/account-create/",{
+        let response=await fetch("/api/doctor/account-create/",{
             method:"POST",
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(doctor)

@@ -25,7 +25,7 @@ export default function NavSection() {
                 if(!localStorage.getItem('JAM_DISPLAY_CONTENT')){
                     window.location.href="/"
                 }
-                let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/profile/',{
+                let response=await fetch('/api/doctor/profile/',{
                     headers:{'Content-Type': 'application/json'},
                     credentials:'include'
                 })
@@ -37,7 +37,7 @@ export default function NavSection() {
                 }
                 else{
                     setUserID(content.app_id)
-                    setLogo("https://health-record-track.herokuapp.com"+content.logo)
+                    setLogo(""+content.logo)
                     setHospitalID(content.hospital_id)
                     setIsEmailVerified(content.email_Verified)
                     setEmail(content.email)
@@ -51,7 +51,7 @@ export default function NavSection() {
 
     let logout=async ()=>{
         handleClose()
-        let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/logout/',{
+        let response=await fetch('/api/doctor/logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'

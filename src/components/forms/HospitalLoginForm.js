@@ -22,7 +22,7 @@ let HospitalLoginForm=()=>{
     let login=async (event)=>{
         event.preventDefault()
 
-        let response=await fetch("https://health-record-track.herokuapp.com/api/hospital-login/",{
+        let response=await fetch("/api/hospital-login/",{
             method:"POST",
             headers:{'Content-Type':'application/json'},
             credentials:'include',

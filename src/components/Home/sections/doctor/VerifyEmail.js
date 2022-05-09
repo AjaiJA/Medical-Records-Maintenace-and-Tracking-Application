@@ -13,7 +13,7 @@ export default function VerifyEmail() {
                 formField.append('email',email)
                 formField.append('verify_token',token)
 
-                let response=await fetch('https://health-record-track.herokuapp.com/api/doctor/token-verify/',{
+                let response=await fetch('/api/doctor/token-verify/',{
                         method: 'POST',
                         credentials:'include',
                         body:formField

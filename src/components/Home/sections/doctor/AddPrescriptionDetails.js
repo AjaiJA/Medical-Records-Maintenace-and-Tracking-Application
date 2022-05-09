@@ -53,7 +53,7 @@ class AddPrescriptionDetails extends Component {
     savePrescriptionDetails=async (e)=>{
         e.preventDefault()
 
-        let response=await fetch("https://health-record-track.herokuapp.com/api/patient/patients-prescription/",{
+        let response=await fetch("/api/patient/patients-prescription/",{
             headers:{'Content-Type':'application/json'},
             method:"POST",
             body:JSON.stringify(this.state)

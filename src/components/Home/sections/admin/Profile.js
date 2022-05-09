@@ -50,7 +50,7 @@ export default function Profile() {
 
     let getAdminDetails =async()=>{
 
-        let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-admin/',{
+        let response=await fetch('/api/hospital-admin/',{
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
         })
@@ -72,7 +72,7 @@ export default function Profile() {
                 // let imgLogoModified=imgLogo.replace("/media/media", "/media")// imgLogo.replace("/media", "")
                 // console.log(imgLogoModified)
                 setImg({
-                    src: "https://health-record-track.herokuapp.com"+imgLogo,
+                    src: ""+imgLogo,
                     alt: content.hospital_name
                 })
                 // console.log(src)
@@ -97,7 +97,7 @@ export default function Profile() {
             setIsImgClicked(false) 
         }
 
-        let response=await fetch("https://health-record-track.herokuapp.com/api/hospital-update/",{
+        let response=await fetch("/api/hospital-update/",{
             method:"PUT",
             credentials:'include',
             body:formField

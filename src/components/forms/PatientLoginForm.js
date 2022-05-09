@@ -22,7 +22,7 @@ let PatientLoginForm=()=>{
         formField.append('email',email)
         formField.append('password',password)
 
-        let loginResponse=await fetch("https://health-record-track.herokuapp.com/api/doctor/login/",{
+        let loginResponse=await fetch("/api/doctor/login/",{
             method:"POST",
             credentials:'include',
             body:formField
@@ -73,7 +73,7 @@ let PatientLoginForm=()=>{
         formField.append('aadhar_number',aadhar)
         formField.append('id',aadhar)
 
-        let response=await fetch("https://health-record-track.herokuapp.com/api/patient/patient-login-otp/",{
+        let response=await fetch("/api/patient/patient-login-otp/",{
             method:"POST",
             credentials:'include',
             body:formField
@@ -178,7 +178,7 @@ let EnterOTP=(props)=>{
         formField.append('aadhar_number',props.aadhar)
         formField.append('otp_code',otp)
 
-        let response=await fetch("https://health-record-track.herokuapp.com/api/patient/patient-login-verify-otp/",{
+        let response=await fetch("/api/patient/patient-login-verify-otp/",{
             method:"POST",
             credentials:'include',
             body:formField

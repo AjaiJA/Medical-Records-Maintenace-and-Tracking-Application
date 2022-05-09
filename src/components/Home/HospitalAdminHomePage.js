@@ -35,7 +35,7 @@ let HospitalAdminHomePage=()=>{
                     history.push('/')
                 }
 
-                let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-admin/',{
+                let response=await fetch('/api/hospital-admin/',{
                     headers:{'Content-Type': 'application/json'},
                     credentials:'include'
                 })
@@ -57,7 +57,7 @@ let HospitalAdminHomePage=()=>{
     })
 
     let logout=async ()=>{
-        let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-logout/',{
+        let response=await fetch('/api/hospital-logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
@@ -101,7 +101,7 @@ let VerifyEmail=(props)=>{
         let email=props.email
         let is_email_Verified=props.mailVerify
 
-        let response=await fetch("https://health-record-track.herokuapp.com/api/email-verify/",{
+        let response=await fetch("/api/email-verify/",{
             method:"POST",
             headers:{'Content-Type':'application/json'},
             credentials:'include',

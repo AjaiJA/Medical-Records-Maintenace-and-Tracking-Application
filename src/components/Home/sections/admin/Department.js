@@ -67,7 +67,7 @@ export default function Department() {
         else{
             setDeptErr(false)
 
-            let res=await fetch('https://health-record-track.herokuapp.com/api/hospital-admin/',{
+            let res=await fetch('/api/hospital-admin/',{
                 headers:{'Content-Type': 'application/json'},
                 credentials:'include'
             })
@@ -79,7 +79,7 @@ export default function Department() {
 
             let send=await axios({
                 method:"POST",
-                url:"https://health-record-track.herokuapp.com/api/hospital-dept-add/",
+                url:"/api/hospital-dept-add/",
                 data:formField,
                 headers:{'Content-Type':'application/json'},
                 credentials:'include'
@@ -103,7 +103,7 @@ export default function Department() {
     },[])
 
     const getDepartments=async()=>{
-        let response=await fetch('https://health-record-track.herokuapp.com/api/hospital-dept/',{
+        let response=await fetch('/api/hospital-dept/',{
             headers:{'Content-Type': 'application/json'},
             credentials:'include'
         })

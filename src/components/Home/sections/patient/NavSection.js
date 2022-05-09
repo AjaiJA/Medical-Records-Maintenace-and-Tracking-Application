@@ -218,7 +218,7 @@ let NavSection=(props)=>{
     );
 
     let logout=async ()=>{
-        let response=await fetch('http://localhost:8000/api/patient/logout/',{
+        let response=await fetch('/api/patient/logout/',{
             method:"POST",
             headers:{'Content-Type': 'application/json'},
             credentials:'include'

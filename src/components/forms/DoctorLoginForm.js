@@ -26,7 +26,7 @@ let DoctorLoginForm=()=>{
         formField.append('email',email)
         formField.append('password',password)
 
-        let loginResponse=await fetch("https://health-record-track.herokuapp.com/api/doctor/login/",{
+        let loginResponse=await fetch("/api/doctor/login/",{
             method:"POST",
             credentials:'include',
             body:formField
